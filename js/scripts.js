@@ -75,7 +75,8 @@ forEach(function(e,t){(-1!=e.title.search(s)||-1!=e.description.search(s)||-1!=e
 function openVideo(videoid) {
   var player = document.getElementById("player-bg");
   var ytplayer = document.getElementById("ytplayer");
-  if (screen.orientation && screen.orientation.type == "landscape-primary") {
+  var mql = window.matchMedia("(orientation: landscape)");
+  if (mql.matches) {
   ytplayer.innerHTML = '<iframe width="50%" height="auto" src="https://www.youtube.com/embed/'+videoid+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 } else {
   ytplayer.innerHTML = '<p>Please, put your phone in landscape mode</p>';
