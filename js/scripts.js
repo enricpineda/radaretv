@@ -33,17 +33,31 @@ function resetDefaults(){
 }
 function showCredits(e){
   var t=document.getElementById("formulari"),
-  n=document.getElementById("credits");!0==e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none")
+  n=document.getElementById("credits");
+  !0==e?(t.style.display="none",n.style.display="block"):(t.style.display="block",n.style.display="none")
 }
 
-SEARCH_BAR.addEventListener("keyup",function(e){"Enter"===e.key&&SEARCH_BAR.blur()}),SEARCH_BAR.addEventListener("keyup",e=>{let t=e.target.value,n=performance.now();fetch(JSON_DATA_FILE).then(e=>e.json()).then(function(e){t=(t=t.trim()).replace(/[|&;$%@"<>()\.//\\+,]/g,"");let r="",l=0,o="",i="";if(0!==l||t.length>1){t.split(" ").forEach(function(e){r+=`(?=.*${e=e.trim()})`});let s=RegExp(r,"gi");e.
+SEARCH_BAR.addEventListener("keyup",function(e){
+  "Enter"===e.key&&SEARCH_BAR.blur()
+}),
+SEARCH_BAR.addEventListener("keyup",e=>{
+  let t=e.target.value,
+  n=performance.now();
+  fetch(JSON_DATA_FILE)
+    .then(e=>e.json())
+    .then(function(e){
+      t=(t=t.trim()).replace(/[|&;$%@"<>()\.//\\+,]/g,"");
+      let r="",l=0,o="",i="";
+      if(0!==l||t.length>0){
+        t.split(" ").forEach(function(e){
+          r+=`(?=.*${e=e.trim()})`});let s=RegExp(r,"gi");e.
 
-forEach(function(e,t){(-1!=e.title.search(s)||-1!=e.description.search(s)||-1!=e.tags.search(s))&&(l+=1,o+=`
+forEach(function(e,t){(-1!=e.title.search(s)||-1!=e.tags.search(s))&&(l+=1,o+=`
 
           <div class="videoelement">
                   <a href="#" onCLick="openVideo('${e.videoid}')"><img src="https://i.ytimg.com/vi/${e.videoid}/hqdefault.jpg" class="miniatura"></a>
                 <p><strong>${e.title}</strong></p>
-                <p>${e.description}</p>
+                <p>${e.descriptions}</p>
         </div>
         `)}
       )}
