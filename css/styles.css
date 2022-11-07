@@ -29,3 +29,7 @@ a{color: #f0f0f0;}
   #player{width: 50%; height: 70%;}
 
 }
+
+@media screen and (orientation: portrait) {
+  #ytplayer {top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg);;}
+}
