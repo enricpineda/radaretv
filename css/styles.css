@@ -17,6 +17,7 @@ body{margin: 0;padding: 0;font-family: monospace;background-color: rgba(0, 0, 0,
 p{color: #fff;}
 a{color: #f0f0f0;}
 #credits{display: none;}
+.giradet {top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg);}
 @media only screen and (max-width: 768px){
   #resultat{flex-direction: column;}
   .videoelement{width: 90%; margin: 0 1em 0 0;}
@@ -28,8 +29,4 @@ a{color: #f0f0f0;}
   .videoelement{width: 250px; margin: 0 1em 0 0;}
   #player{width: 50%; height: 70%;}
 
-}
-
-@media screen and (orientation: portrait) {
-  #ytplayer {top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg);;}
 }
