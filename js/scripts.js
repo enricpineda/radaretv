@@ -90,7 +90,7 @@ function openVideo(videoid) {
   var player = document.getElementById("player-bg");
   var ytplayer = document.getElementById("ytplayer");
   ytplayer.innerHTML = '<iframe width="50%" height="auto" src="https://www.youtube.com/embed/'+videoid+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-  
+
   player.style.display='block';
 }
 
@@ -108,3 +108,7 @@ function showTag(thetag) {
   cercador.dispatchEvent(e);
   //trigger(cercador,"onkeyup");
 }
+
+document.getElementById("player-bg").addEventListener("click", function() {
+  closeVideo();
+});
