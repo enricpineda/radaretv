@@ -112,3 +112,9 @@ function showTag(thetag) {
 document.getElementById("player-bg").addEventListener("click", function() {
   closeVideo();
 });
+
+window.addEventListener('keydown', function(event){
+  if (event.key === 'Escape') {
+    closeVideo();
+  }
+})
